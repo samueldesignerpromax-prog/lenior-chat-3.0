@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// URL fixa (substitua se necessário)
-export const API_URL = 'https://lenior-api-com-groq.onrender.com';
+// URL da API (substitua se mudar)
+export const API_URL = 'https://lenior-api-com-groq-1.onrender.com';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -11,7 +11,7 @@ const api = axios.create({
   },
 });
 
-// Logs para debug (opcional)
+// Interceptor para logs (opcional, mas útil para debug)
 api.interceptors.request.use(
   (config) => {
     console.log(`🚀 [${config.method.toUpperCase()}] ${config.url}`, config.data || '');
