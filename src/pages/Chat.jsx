@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import api, { API_URL } from '../api';
 import MessageBubble from '../components/MessageBubble';
 import AudioRecorder from '../components/AudioRecorder';
-import LoadingSpinner from '../components/LoadingSpinner';
 import { FaPaperPlane, FaSpinner } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 
@@ -30,7 +29,7 @@ export default function Chat() {
     }
   };
 
-  // Envio de mensagem (texto)
+  // ===== ENVIAR MENSAGEM (TEXTO) =====
   const sendMessage = async (text) => {
     if (!text.trim()) return;
     const userMessage = text.trim();
@@ -70,7 +69,7 @@ export default function Chat() {
     }
   };
 
-  // Envio de áudio
+  // ===== ENVIAR ÁUDIO =====
   const handleAudioSend = async (formData) => {
     setLoading(true);
     setMessages(prev => [...prev, { text: '🎤 Enviei um áudio...', isUser: true }]);
